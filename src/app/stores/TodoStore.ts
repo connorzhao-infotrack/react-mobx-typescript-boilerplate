@@ -30,6 +30,9 @@ export const useTodoStore = (defaultTodos: TodoModel[] = []) => {
     deleteTodo(id: number): void {
       store.todos = store.todos.filter((todo) => todo.id !== id);
     },
+    deleteSecond(): void {
+      store.todos = store.todos.filter((todo, index) => index !== 1);
+    },
     completeAll(): void {
       store.todos = store.todos.map((todo) => ({ ...todo, completed: true }));
     },
